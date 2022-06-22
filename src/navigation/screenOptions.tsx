@@ -1,6 +1,6 @@
 import React from 'react';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
-import { BottomTabNavigationOptions, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { faRocket, faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import * as screenTitles from './screenTitles';
