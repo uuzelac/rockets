@@ -1,7 +1,7 @@
 import { Alert, Platform } from 'react-native';
 import { requestMultiple, PERMISSIONS, RESULTS, openSettings } from 'react-native-permissions';
 
-const handleMultiplePermissionsAndroid = (callbackAction: () => void): void  => {
+const handleMultiplePermissionsAndroid = (callbackAction: () => void): void => {
   requestMultiple([PERMISSIONS.ANDROID.CAMERA, PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE]).then(
     (statuses) => {
       const isPermissionsEnabled = !Object.values(statuses).some(
@@ -40,7 +40,7 @@ const handleMultiplePermissionsAndroid = (callbackAction: () => void): void  => 
   );
 };
 
-const handleMultiplePermissionsIOS = (callbackAction: () => void): void  => {
+const handleMultiplePermissionsIOS = (callbackAction: () => void): void => {
   requestMultiple([
     PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY,
     PERMISSIONS.IOS.CAMERA,

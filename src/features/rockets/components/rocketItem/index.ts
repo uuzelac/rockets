@@ -1,3 +1,3 @@
-import RocketItem from "./RocketItem";
+import RocketItem from './RocketItem';
 
 export default RocketItem;

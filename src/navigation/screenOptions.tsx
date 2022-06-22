@@ -20,6 +20,8 @@ export const rockets: BottomTabNavigationOptions = {
 export const crewMembers: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarLabel: screenTitles.CREW_MEMBERS,
-  tabBarIcon: ({ color, size }) => <FontAwesomeIcon icon={faPeopleGroup} size={size} color={color} />,
+  tabBarIcon: ({ color, size }) => (
+    <FontAwesomeIcon icon={faPeopleGroup} size={size} color={color} />
+  ),
   tabBarActiveTintColor: colors.black,
 };

@@ -6,6 +6,5 @@ export const fetchRockets = createAsyncThunk('rockets/getAll', async () => {
   try {
     const response = await api.getRocketsApi();
     return response.data.map((rocket: Rocket) => new Rocket(rocket));
-  } catch (error) {
-  }
+  } catch (error) {}
 });

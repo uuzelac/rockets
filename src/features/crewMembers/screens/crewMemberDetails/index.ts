@@ -1,3 +1,3 @@
-import CrewMemberDetails from "./CrewMemberDetails";
+import CrewMemberDetails from './CrewMemberDetails';
 
 export default CrewMemberDetails;

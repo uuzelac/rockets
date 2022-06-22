@@ -17,7 +17,6 @@ type Props = NavProps;
 
 const CrewMembers = ({ navigation }: Props): JSX.Element => {
   const dispatch = useDispatch<ThunkDispatch<RootReducerType, any, Action<any>>>();
-  // const navigation = useNavigation();
 
   const members: CrewMember[] | null = useSelector(getAllCrewMembers);
   const isLoading: boolean = useSelector(isLoadingCrewMembers);
