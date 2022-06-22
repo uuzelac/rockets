@@ -5,17 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Text, View, FlatList, Dimensions, ActivityIndicator } from 'react-native';
 import { fetchRockets } from '../../redux/rockets/modules';
 import { getAllRockets, isLoadingRockets } from '../../redux/rockets/selectors';
+import { isConnected } from '../../redux/appState/selectors';
 import { RootReducerType } from '../../redux/types';
 import RocketItem from './components/rocketItem';
 import { Rocket } from '../../redux/rockets/models';
 import styles from './styles';
 import * as colors from '../../theme/colors';
+import NoInternetConnection from '../../components/noInternetConnection';
 
 const Rockets = (): JSX.Element => {
   const dispatch = useDispatch<ThunkDispatch<RootReducerType, any, Action<any>>>();
 
   const rockets: Rocket[] | null = useSelector(getAllRockets);
   const isLoading: boolean = useSelector(isLoadingRockets);
+  const connection :boolean | null = useSelector(isConnected);
 
   useEffect(() => {
     dispatch(fetchRockets());
@@ -33,9 +36,9 @@ const Rockets = (): JSX.Element => {
   );
 
   const renderRocketsList = (): JSX.Element => {
-    // if (!rockets && !connection) {
-    //   return <NoInternetConnection />;
-    // }
+    if (!rockets && !connection) {
+      return <NoInternetConnection />;
+    }
     if (isLoading || !rockets) {
       return (
         <ActivityIndicator size="large" color={colors.black} style={styles.activityIndicator} />
