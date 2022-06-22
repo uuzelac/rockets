@@ -5,7 +5,7 @@ export type RootStackParamList = {
   [ROUTES.HOME]: undefined;
   [ROUTES.ROCKETS]: undefined;
   [ROUTES.CREW_MEMBERS]: undefined;
-  [ROUTES.CREW_MEMBER_DETAILS]: undefined;
+  [ROUTES.CREW_MEMBER_DETAILS]: { id: string };
 };
 
 export type HomeNavProps = NativeStackScreenProps<RootStackParamList, typeof ROUTES.HOME>;
