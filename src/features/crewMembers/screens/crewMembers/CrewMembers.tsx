@@ -18,7 +18,7 @@ const CrewMembers = (): JSX.Element => {
 
   const members: CrewMember[] | null = useSelector(getAllCrewMembers);
   const isLoading: boolean = useSelector(isLoadingCrewMembers);
-  const connection :boolean | null = useSelector(isConnected);
+  const connection: boolean | null = useSelector(isConnected);
 
   useEffect(() => {
     dispatch(fetchCrewMembers());

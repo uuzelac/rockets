@@ -18,7 +18,7 @@ const Rockets = (): JSX.Element => {
 
   const rockets: Rocket[] | null = useSelector(getAllRockets);
   const isLoading: boolean = useSelector(isLoadingRockets);
-  const connection :boolean | null = useSelector(isConnected);
+  const connection: boolean | null = useSelector(isConnected);
 
   useEffect(() => {
     dispatch(fetchRockets());

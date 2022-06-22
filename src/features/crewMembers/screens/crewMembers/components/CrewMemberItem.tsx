@@ -11,6 +11,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../../../navigation/types';
 import { handlePermissions } from '../../../../../utils/permissions';
 import { getAppState } from '../../../../../redux/appState/selectors';
+import { isConnected } from '../../../../../redux/appState/selectors';
+import { noInternetConnectionToast } from '../../../../../utils/helper';
 
 interface CrewMemberItemProps {
   name: string;
@@ -20,13 +22,20 @@ interface CrewMemberItemProps {
 
 const CrewMemberItem = ({ name, image, id }: CrewMemberItemProps): JSX.Element => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const appState = useSelector(getAppState);
+  const appState: string | null = useSelector(getAppState);
+  const connection: boolean | null = useSelector(isConnected);
 
   const onItemPress = (id: string): void => {
-    handlePermissions(appState, navigateToPage);
+    if (appState && appState === 'active') {
+      handlePermissions(navigateToPage);
+    }
   };
 
   const navigateToPage = (): void => {
+    if (!connection) {
+      noInternetConnectionToast();
+      return;
+    }
     navigation.navigate(ROUTE_NAMES.CREW_MEMBER_DETAILS, {
       id,
     });

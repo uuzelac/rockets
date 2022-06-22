@@ -1,7 +1,7 @@
 import { Alert, Platform } from 'react-native';
 import { requestMultiple, PERMISSIONS, RESULTS, openSettings } from 'react-native-permissions';
 
-const handleMultiplePermissionsAndroid = (callbackAction: () => void): void => {
+const handlePermissionsAndroid = (callbackAction: () => void): void => {
   requestMultiple([PERMISSIONS.ANDROID.CAMERA, PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE]).then(
     (statuses) => {
       const isPermissionsEnabled = !Object.values(statuses).some(
@@ -40,7 +40,7 @@ const handleMultiplePermissionsAndroid = (callbackAction: () => void): void => {
   );
 };
 
-const handleMultiplePermissionsIOS = (callbackAction: () => void): void => {
+const handlePermissionsIOS = (callbackAction: () => void): void => {
   requestMultiple([
     PERMISSIONS.IOS.APP_TRACKING_TRANSPARENCY,
     PERMISSIONS.IOS.CAMERA,
@@ -78,19 +78,9 @@ const handleMultiplePermissionsIOS = (callbackAction: () => void): void => {
   });
 };
 
-export const handlePermissionsIOS = (appState: string | null, callbackAction: () => void): void => {
-  if (appState && appState === 'active') {
-    handleMultiplePermissionsIOS(callbackAction);
-  }
-};
-
-export const handlePermissionsAndroid = (callbackAction: () => void): void => {
-  handleMultiplePermissionsAndroid(callbackAction);
-};
-
-export const handlePermissions = (appState: string | null, callbackAction: () => void): void => {
+export const handlePermissions = (callbackAction: () => void): void => {
   const platform = Platform.select({
-    ios: () => handlePermissionsIOS(appState, callbackAction),
+    ios: () => handlePermissionsIOS(callbackAction),
     android: () => handlePermissionsAndroid(callbackAction),
   });
   if (platform) {
