@@ -1,3 +1,3 @@
-import CrewMembers from './screens/CrewMembers';
+import CrewMembers from './screens/crewMembers/CrewMembers';
 
 export default CrewMembers;
