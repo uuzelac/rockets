@@ -56,7 +56,7 @@ const CrewMemberDetails = ({ route, navigation }: NavProps): JSX.Element => {
             <Text style={styles.singleInfo}>{status}</Text>
           </View>
           <View style={styles.singleInfoContainer}>
-            <Text style={styles.singleInfoLabel}>LINK</Text>
+            <Text style={styles.singleInfoLabel}>WIKI</Text>
             <TouchableOpacity onPress={() => openLink(wikipedia)}>
               <Text style={styles.singleInfoLink}>{wikipedia}</Text>
             </TouchableOpacity>
