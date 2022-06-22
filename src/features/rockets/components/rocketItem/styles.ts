@@ -14,15 +14,17 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.5,
     shadowRadius: 8,
-    elevation: 2,
+    elevation: 4,
   },
   container: {
     flexDirection: 'row',
     flex: 1,
+    alignItems: 'center',
   },
   image: {
     flex: 1,
     borderRadius: 10,
+    aspectRatio: 1 / 1,
   },
   info: {
     marginStart: 20,

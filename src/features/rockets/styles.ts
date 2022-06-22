@@ -21,14 +21,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 50,
+    fontSize: 48,
     color: colors.black,
     marginStart: 40,
     marginEnd: 40,
     marginBottom: 20,
+    fontWeight: 'bold',
   },
   content: {
-    paddingTop: 100,
+    paddingTop: 88,
     flex: 1,
   },
   activityIndicator: {
