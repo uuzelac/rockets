@@ -36,7 +36,7 @@ const Rockets = (): JSX.Element => {
     // if (!rockets && !connection) {
     //   return <NoInternetConnection />;
     // }
-    if (isLoading) {
+    if (isLoading || !rockets) {
       return (
         <ActivityIndicator size="large" color={colors.black} style={styles.activityIndicator} />
       );
