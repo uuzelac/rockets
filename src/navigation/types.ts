@@ -8,4 +8,4 @@ export type RootStackParamList = {
   [ROUTES.CREW_MEMBER_DETAILS]: { id: string };
 };
 
-export type HomeNavProps = NativeStackScreenProps<RootStackParamList, typeof ROUTES.HOME>;
+export type NavProps = NativeStackScreenProps<RootStackParamList, 'HOME'>;

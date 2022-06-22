@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Text, View, Image, TouchableOpacity, AppState, Platform } from 'react-native';
+import React from 'react';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as ROUTE_NAMES from '../../../../../navigation/routeNames';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../../../navigation/types';
-import { handlePermissionsIOS, handlePermissions } from '../../../../../utils/permissions';
+import { handlePermissions } from '../../../../../utils/permissions';
 import { getAppState } from '../../../../../redux/appState/selectors';
 
 interface CrewMemberItemProps {
@@ -30,7 +30,7 @@ const CrewMemberItem = ({ name, image, id }: CrewMemberItemProps): JSX.Element =
     navigation.navigate(ROUTE_NAMES.CREW_MEMBER_DETAILS, {
       id,
     });
-  }
+  };
 
   return (
     <TouchableOpacity onPress={() => onItemPress(id)}>

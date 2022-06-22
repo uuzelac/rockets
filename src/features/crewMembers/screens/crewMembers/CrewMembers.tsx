@@ -11,9 +11,9 @@ import CrewMember from '../../../../redux/crewMembers/models/CrewMember';
 import styles from './styles';
 import * as colors from '../../../../theme/colors';
 import * as ROUTE_NAMES from '../../../../navigation/routeNames';
-import { HomeNavProps } from '../../../../navigation/types';
+import { NavProps } from '../../../../navigation/types';
 
-type Props = HomeNavProps;
+type Props = NavProps;
 
 const CrewMembers = ({ navigation }: Props): JSX.Element => {
   const dispatch = useDispatch<ThunkDispatch<RootReducerType, any, Action<any>>>();
